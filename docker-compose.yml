@@ -1,0 +1,11 @@
+services:
+  rancher-dev:
+    container_name: rancher-dev
+    image: rancher/rancher:v2.11.1-rc2-amd64
+    restart: unless-stopped
+    ports:
+      - "9090:80"
+      - "9091:443"
+    privileged: true
+    volumes:
+      - /opt/rancher:/var/lib/rancher
